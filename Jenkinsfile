@@ -12,5 +12,15 @@ pipeline {
         sh 'npm install'
       }
     }
+
+    stage('') {
+      environment {
+        CI = 'true'
+      }
+      steps {
+        sh './jenkins/scripts/test.sh'
+      }
+    }
+
   }
 }
